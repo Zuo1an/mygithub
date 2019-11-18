@@ -1,0 +1,43 @@
+源码  View
+
+- __init_ _初始化函数
+
+- 属性和方法
+
+  - as_view
+
+    - classonlymethod
+
+    - 内部
+
+      - 迭代初始化参数
+
+        - 参数的key不能是请求方法的名字
+        - 参数的key应该是已存在的类上的属性
+
+      - 定义闭包函数view
+
+        - 支持get就支持head请求
+
+      - 记录参数
+
+      - 调用dispatch
+
+        
+
+  - dispatch
+
+    - 根据请求方法的名字的小写去对象中获取对应的属性，找到直接返回，没有找到返回对象不被允许
+
+  - http_method_not_allowed
+
+    - 405
+
+  - options
+
+    - 默认支持此请求
+    - 可以查询接口支持哪些请求
+
+  - http_method_names
+
+    - Django 最多支持列表中的请求【get,post,put,patch,delete,head,options,trace】
